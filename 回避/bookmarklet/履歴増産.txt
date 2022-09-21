@@ -1,0 +1,1 @@
+javascript:var num=prompt("このページを履歴に何個追加しますか？");done=false;x=window.location.href;for (var i=1; i<=num; i++){history.pushState(0, 0, i==num?x:i.toString());if(i==num){done=true}}if(done===true){alert("OK!\n "+window.location.href+" \nを "+num+"こ追加しました。")}
