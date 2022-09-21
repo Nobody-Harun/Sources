@@ -3,8 +3,7 @@
 // Forked from https://myohthegod.net/js/exploit.js
 
 if (!(location.host == "chrome.google.com" && location.pathname.startsWith("/webstorex"))) {
-  try {
-    switch (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage) {
+    switch (window.navigator.language) {
         case "ja":
             alert("https://chrome.google.com/webstorexへ移動し終わった後もう一度、このブックマークレートをクリックしてください。");
             break;
@@ -13,9 +12,7 @@ if (!(location.host == "chrome.google.com" && location.pathname.startsWith("/web
             alert("IMPORTANT PLS READ: After clicking OK, if it takes you to a 404, you are good. Click the bookmarklet once more after doing that.");
             break;
     };
-  } catch(e) {
     location.href = "https://chrome.google.com/webstorex";
-  }
   }
 
   document.head.innerHTML = `
