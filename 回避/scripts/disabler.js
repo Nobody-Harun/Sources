@@ -3,18 +3,21 @@
 // Forked from https://myohthegod.net/js/exploit.js
 
 if (!(location.host == "chrome.google.com" && location.pathname.startsWith("/webstorex"))) {
+  try {
     switch (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage) {
         case "ja":
             alert("https://chrome.google.com/webstorexへ移動し終わった後もう一度、このブックマークレートをクリックしてください。");
             break;
-    
+
         default:
             alert("IMPORTANT PLS READ: After clicking OK, if it takes you to a 404, you are good. Click the bookmarklet once more after doing that.");
             break;
     };
+  } catch(e) {
     location.href = "https://chrome.google.com/webstorex";
   }
-  
+  }
+
   document.head.innerHTML = `
   <style>
   tr:nth-child(even){background-color: #f2f2f2;}
@@ -79,30 +82,30 @@ if (!(location.host == "chrome.google.com" && location.pathname.startsWith("/web
   </style>
   `;
   document.body = document.createElement("body");
-  
+
   document.toggleFunction = function(id) {
     var clickedRow = document.getElementById(id);
     chrome.management.setEnabled(id, clickedRow.children[0].children[0].children[0].checked);
   };
-  
+
   document.newBodyData = "<table>"
   console.log(document.newBodyData)
   document.newBodyData += ""
-  
-  
+
+
   chrome.management.getAll(function() {
     arguments[0].forEach(function(extension) {
       document.newBodyData += "<tr id=" + extension.id + ">"
       /*
       if ("icons" in extension) {
           document.newBodyData += "<td><img src='"+extension.icons[0]['url']+"'/></td>"
-      }    
+      }
       */
       document.newBodyData += "<td><label class='switch'><input type='checkbox' " + (extension.enabled ? "checked" : "") + " onclick=\"toggleFunction('" + extension.id + "')\"><span class='slider round'></span></label></td>"
       document.newBodyData += "<td>" + extension.name + "</td>"
       document.newBodyData += "<td>" + extension.id + "</td>"
       document.newBodyData += "<td>" + extension.installType + "</td>"
-  
+
       document.newBodyData += "</tr>"
     });
     document.newBodyData += "</table>"
