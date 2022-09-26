@@ -26,4 +26,4 @@ document.runner = () => {
 
 document.head.innerHTML = `<title>Develop Tool</title>`;
 document.body = document.createElement("body");
-document.body.innerHTML = '<label for="name">Script: </label> <textarea id="name" name="script" rows="5" cols="33"><br><button onclick="runner()">Run</button>';
+document.body.innerHTML = '<label for="name">Script: </label> <textarea id="name" name="script" rows="5" cols="33">chrome.management.</textarea><br><button onclick="runner()">Run</button>';
