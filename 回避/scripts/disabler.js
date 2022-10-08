@@ -47,8 +47,8 @@ document.toggleFunction = function(id) {
 document.newBodyData = "<table>";
 document.newBodyData += "";
 
-chrome.management.getAll(() => {
-    arguments[0].forEach((extension) => {
+chrome.management.getAll(function() {
+    arguments[0].forEach(function(extension) {
         document.newBodyData += "<tr id=" + extension.id + ">";
         document.newBodyData += "<td><label class='switch'><input type='checkbox' " + (extension.enabled ? "checked" : "") + " onclick=\"toggleFunction('" + extension.id + "')\"><span class='slider round'></span></label></td>";
         document.newBodyData += "<td>" + extension.name + "</td>";
