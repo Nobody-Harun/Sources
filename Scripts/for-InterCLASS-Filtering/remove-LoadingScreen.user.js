@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         No InterCLASS Screen
+// @name         InterCLASS Screen Cleaner
 // @namespace    https://blogbooks.net
 // @version      1.0.32
 // @description  for InterCLASS Filtering Service at ChromeOS!\n 注意: https://blogbooks.net/chromebook/1924/ をしてからでないと、何も起きません
